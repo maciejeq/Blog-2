@@ -1,11 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
-from django.core.mail import send_mail
-from django.db.models import Count
-from taggit.models import Tag
 from .models import Post, Comment
+from django.core.mail import send_mail
 from .forms import EmailPostForm, CommentForm
+from taggit.models import Tag
 
 
 def post_list(request, tag_slug=None):
